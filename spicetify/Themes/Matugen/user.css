@@ -1,0 +1,31 @@
+/* Tema Matugen para Spicetify: as cores vêm do color.ini (gerado pelo matugen). */
+.encore-dark-theme, .encore-dark-theme .encore-base-set, .encore-light-theme, .encore-light-theme .encore-base-set {
+  --background-base: var(--spice-main) !important;
+  --background-highlight: var(--spice-highlight) !important;
+  --background-press: var(--spice-highlight-elevated) !important;
+  --background-elevated-base: var(--spice-main-elevated) !important;
+  --background-elevated-highlight: var(--spice-highlight) !important;
+  --background-elevated-press: var(--spice-highlight-elevated) !important;
+  --background-tinted-base: rgba(var(--spice-rgb-selected-row), 0.07) !important;
+  --background-tinted-highlight: rgba(var(--spice-rgb-selected-row), 0.12) !important;
+  --background-tinted-press: rgba(var(--spice-rgb-selected-row), 0.16) !important;
+  --text-base: var(--spice-text) !important;
+  --text-subdued: var(--spice-subtext) !important;
+  --text-bright-accent: var(--spice-button) !important;
+  --text-positive: var(--spice-button) !important;
+  --essential-base: var(--spice-text) !important;
+  --essential-subdued: var(--spice-misc) !important;
+  --essential-bright-accent: var(--spice-button) !important;
+  --decorative-base: var(--spice-text) !important;
+  --decorative-subdued: var(--spice-misc) !important;
+}
+.encore-bright-accent-set {
+  --background-base: var(--spice-button) !important;
+  --background-highlight: var(--spice-button-active) !important;
+  --background-press: var(--spice-button-active) !important;
+  --text-base: var(--spice-on-button) !important;
+  --essential-base: var(--spice-on-button) !important;
+}
+.Root__nav-bar, .Root__now-playing-bar, .main-nowPlayingBar-container { background-color: var(--spice-sidebar) !important; }
+.Root__main-view, .main-view-container { background-color: var(--spice-main) !important; }
+::selection { background: var(--spice-button); color: var(--spice-on-button); }

@@ -1,0 +1,8 @@
+[Unit]
+Description=Reaplica o tema Matugen no Spotify quando o matugen gera cores novas
+
+[Path]
+PathChanged=%h/.config/spicetify/Themes/Matugen/color.ini
+
+[Install]
+WantedBy=default.target

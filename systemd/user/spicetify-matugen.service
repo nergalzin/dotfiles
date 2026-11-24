@@ -1,0 +1,9 @@
+[Unit]
+Description=spicetify refresh (tema Matugen)
+
+[Service]
+Type=oneshot
+# espera o matugen terminar de escrever os arquivos
+ExecStartPre=/usr/bin/sleep 1
+# -n: não reinicia o Spotify; as cores novas aparecem na próxima vez que ele abrir
+ExecStart=/usr/bin/spicetify -q -n refresh

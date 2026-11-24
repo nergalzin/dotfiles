@@ -1,0 +1,34 @@
+{
+  "mode": "light",
+  "extends": "defaultLight",
+  "stylesheets": ["matugen-light.css"],
+  "colors": {
+    "background": "{{colors.surface.light.hex}}",
+    "background-alternate": "{{colors.surface_container_lowest.light.hex}}",
+    "surface": "{{colors.surface_container.light.hex}}",
+    "surface-foreground": "{{colors.on_surface.light.hex}}",
+    "foreground": "{{colors.on_surface.light.hex}}",
+    "foreground-muted": "{{colors.on_surface_variant.light.hex}}",
+    "primary": "{{colors.primary.light.hex}}",
+    "black": "{{colors.on_surface.light.hex}}",
+    "white": "{{colors.surface_container_lowest.light.hex}}",
+    "state-error": "{{colors.error.light.hex}}",
+    "state-info": "{{colors.secondary.light.hex}}",
+    "state-success": "{{colors.tertiary.light.hex}}",
+    "state-warning": "{{colors.primary.light.hex}}"
+  },
+  "app": {
+    "overlay-header": "linear-gradient(rgba({{colors.surface.light.red}}, {{colors.surface.light.green}}, {{colors.surface.light.blue}}, 0.25) 0%, rgba({{colors.surface.light.red}}, {{colors.surface.light.green}}, {{colors.surface.light.blue}}, 0.9) 100%), var(--theme-background-noise)",
+    "overlay-subheader": "linear-gradient(180deg, rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.06) 0%, var(--theme-colors-background) 100%), var(--theme-background-noise)",
+    "scrollbar-size": "10px",
+    "scrollbar-handle-border-radius": "10px",
+    "scrollbar-track-border-radius": "10px",
+    "scrollbar-handle-background": "rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.28)",
+    "scrollbar-handle-hover-background": "rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.5)",
+    "scrollbar-handle-active-background": "rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.7)",
+    "scrollbar-track-background": "transparent",
+    "scrollbar-track-hover-background": "rgba({{colors.surface_container.light.red}}, {{colors.surface_container.light.green}}, {{colors.surface_container.light.blue}}, 0.5)",
+    "scrollbar-track-active-background": "rgba({{colors.surface_container.light.red}}, {{colors.surface_container.light.green}}, {{colors.surface_container.light.blue}}, 0.5)"
+  },
+  "mantineOverride": { "primaryShade": { "light": 6 } }
+}

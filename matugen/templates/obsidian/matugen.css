@@ -1,0 +1,91 @@
+/* Matugen — cores do wallpaper atual sobre o tema Primary.
+   Gerado pelo matugen. Fonte: ~/.config/matugen/templates/obsidian/matugen.css (edite lá, não aqui).
+   Troca só a paleta (tons de cinza e destaque); o visual do Primary continua o mesmo. */
+
+body.theme-dark, .theme-dark {
+  --color-d-gray-10: {{colors.on_surface.dark.hex}} !important;
+  --color-d-gray-20: {{colors.on_surface_variant.dark.hex}} !important;
+  --color-d-gray-30: color-mix(in srgb, {{colors.on_surface_variant.dark.hex}} 60%, {{colors.outline.dark.hex}}) !important;
+  --color-d-gray-40: {{colors.outline.dark.hex}} !important;
+  --color-d-gray-50: color-mix(in srgb, {{colors.outline.dark.hex}} 55%, {{colors.outline_variant.dark.hex}}) !important;
+  --color-d-gray-60: {{colors.outline_variant.dark.hex}} !important;
+  --color-d-gray-70: {{colors.surface_container_highest.dark.hex}} !important;
+  --color-d-gray-80: {{colors.surface_container_high.dark.hex}} !important;
+  --color-d-gray-90: {{colors.surface_container.dark.hex}} !important;
+  --color-d-gray-100: {{colors.surface_container_low.dark.hex}} !important;
+  --color-d-gray-110: color-mix(in srgb, {{colors.surface_container_low.dark.hex}} 50%, {{colors.surface.dark.hex}}) !important;
+  --color-d-gray-120: {{colors.surface.dark.hex}} !important;
+  --color-d-gray-130: color-mix(in srgb, {{colors.surface.dark.hex}} 50%, {{colors.surface_container_lowest.dark.hex}}) !important;
+  --color-d-gray-140: {{colors.surface_container_lowest.dark.hex}} !important;
+  --color-d-alpha-gray: rgba({{colors.outline.dark.red}}, {{colors.outline.dark.green}}, {{colors.outline.dark.blue}}, 0.2) !important;
+  --color-accent: {{colors.primary.dark.hex}} !important;
+  --color-accent-1: color-mix(in srgb, {{colors.primary.dark.hex}} 80%, {{colors.primary_fixed_dim.dark.hex}}) !important;
+  --color-accent-2: color-mix(in srgb, {{colors.primary.dark.hex}} 75%, {{colors.on_surface.dark.hex}}) !important;
+  --interactive-accent: {{colors.primary.dark.hex}} !important;
+  --interactive-accent-hover: color-mix(in srgb, {{colors.primary.dark.hex}} 85%, {{colors.on_surface.dark.hex}}) !important;
+  --text-accent: {{colors.primary.dark.hex}} !important;
+  --text-accent-hover: color-mix(in srgb, {{colors.primary.dark.hex}} 80%, {{colors.on_surface.dark.hex}}) !important;
+  --text-on-accent: {{colors.on_primary.dark.hex}} !important;
+  --text-on-accent-inverted: {{colors.on_primary.dark.hex}} !important;
+  --text-selection: rgba({{colors.primary.dark.red}}, {{colors.primary.dark.green}}, {{colors.primary.dark.blue}}, 0.25) !important;
+  --text-highlight-bg: rgba({{colors.tertiary.dark.red}}, {{colors.tertiary.dark.green}}, {{colors.tertiary.dark.blue}}, 0.3) !important;
+  --background-modifier-border-focus: {{colors.primary.dark.hex}} !important;
+  --checkbox-color: {{colors.primary.dark.hex}} !important;
+  --checkbox-color-hover: color-mix(in srgb, {{colors.primary.dark.hex}} 85%, {{colors.on_surface.dark.hex}}) !important;
+  --link-color: {{colors.primary.dark.hex}} !important;
+  --link-external-color: {{colors.primary.dark.hex}} !important;
+  --link-unresolved-color: {{colors.tertiary.dark.hex}} !important;
+  --tag-color: {{colors.primary.dark.hex}} !important;
+  --tag-background: rgba({{colors.primary.dark.red}}, {{colors.primary.dark.green}}, {{colors.primary.dark.blue}}, 0.12) !important;
+  --tag-background-hover: rgba({{colors.primary.dark.red}}, {{colors.primary.dark.green}}, {{colors.primary.dark.blue}}, 0.2) !important;
+  --graph-node-focused: {{colors.primary.dark.hex}} !important;
+  /* cores "alternadas" do Primary (abas ativas, ícones, menus): amarelo/vermelho/azul -> paleta do wallpaper */
+  --alternating-color-1: {{colors.primary.dark.hex}} !important;
+  --alternating-color-2: {{colors.secondary.dark.hex}} !important;
+  --alternating-color-3: {{colors.tertiary.dark.hex}} !important;
+  --bold-color: {{colors.tertiary.dark.hex}} !important;
+}
+
+body.theme-light, .theme-light {
+  --color-l-gray-10: {{colors.surface_container_lowest.light.hex}} !important;
+  --color-l-gray-20: {{colors.surface.light.hex}} !important;
+  --color-l-gray-30: {{colors.surface_container_low.light.hex}} !important;
+  --color-l-gray-40: {{colors.surface_container.light.hex}} !important;
+  --color-l-gray-50: {{colors.surface_container_high.light.hex}} !important;
+  --color-l-gray-60: {{colors.surface_container_highest.light.hex}} !important;
+  --color-l-gray-70: {{colors.outline_variant.light.hex}} !important;
+  --color-l-gray-80: color-mix(in srgb, {{colors.outline_variant.light.hex}} 50%, {{colors.outline.light.hex}}) !important;
+  --color-l-gray-90: {{colors.outline.light.hex}} !important;
+  --color-l-gray-100: color-mix(in srgb, {{colors.outline.light.hex}} 50%, {{colors.on_surface_variant.light.hex}}) !important;
+  --color-l-gray-110: color-mix(in srgb, {{colors.outline.light.hex}} 25%, {{colors.on_surface_variant.light.hex}}) !important;
+  --color-l-gray-120: {{colors.on_surface_variant.light.hex}} !important;
+  --color-l-gray-130: color-mix(in srgb, {{colors.on_surface_variant.light.hex}} 50%, {{colors.on_surface.light.hex}}) !important;
+  --color-l-gray-140: {{colors.on_surface.light.hex}} !important;
+  --color-l-alpha-gray: rgba({{colors.outline.light.red}}, {{colors.outline.light.green}}, {{colors.outline.light.blue}}, 0.2) !important;
+  --color-accent: {{colors.primary.light.hex}} !important;
+  --color-accent-1: color-mix(in srgb, {{colors.primary.light.hex}} 80%, {{colors.primary_container.light.hex}}) !important;
+  --color-accent-2: color-mix(in srgb, {{colors.primary.light.hex}} 75%, {{colors.on_surface.light.hex}}) !important;
+  --interactive-accent: {{colors.primary.light.hex}} !important;
+  --interactive-accent-hover: color-mix(in srgb, {{colors.primary.light.hex}} 85%, {{colors.on_surface.light.hex}}) !important;
+  --text-accent: {{colors.primary.light.hex}} !important;
+  --text-accent-hover: color-mix(in srgb, {{colors.primary.light.hex}} 80%, {{colors.on_surface.light.hex}}) !important;
+  --text-on-accent: {{colors.on_primary.light.hex}} !important;
+  --text-on-accent-inverted: {{colors.on_primary.light.hex}} !important;
+  --text-selection: rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.25) !important;
+  --text-highlight-bg: rgba({{colors.tertiary.light.red}}, {{colors.tertiary.light.green}}, {{colors.tertiary.light.blue}}, 0.3) !important;
+  --background-modifier-border-focus: {{colors.primary.light.hex}} !important;
+  --checkbox-color: {{colors.primary.light.hex}} !important;
+  --checkbox-color-hover: color-mix(in srgb, {{colors.primary.light.hex}} 85%, {{colors.on_surface.light.hex}}) !important;
+  --link-color: {{colors.primary.light.hex}} !important;
+  --link-external-color: {{colors.primary.light.hex}} !important;
+  --link-unresolved-color: {{colors.tertiary.light.hex}} !important;
+  --tag-color: {{colors.primary.light.hex}} !important;
+  --tag-background: rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.12) !important;
+  --tag-background-hover: rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.2) !important;
+  --graph-node-focused: {{colors.primary.light.hex}} !important;
+  /* cores "alternadas" do Primary (abas ativas, ícones, menus): amarelo/vermelho/azul -> paleta do wallpaper */
+  --alternating-color-1: {{colors.primary.light.hex}} !important;
+  --alternating-color-2: {{colors.secondary.light.hex}} !important;
+  --alternating-color-3: {{colors.tertiary.light.hex}} !important;
+  --bold-color: {{colors.tertiary.light.hex}} !important;
+}

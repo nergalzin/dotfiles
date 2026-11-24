@@ -1,0 +1,100 @@
+/* Matugen (light) — gerado pelo matugen a partir do wallpaper.
+   Fonte: ~/.config/matugen/templates/feishin/matugen-light.css */
+:root {
+  --mg-primary: {{colors.primary.light.hex}};
+  --mg-on-primary: {{colors.on_primary.light.hex}};
+  --mg-primary-container: {{colors.primary_container.light.hex}};
+  --mg-on-primary-container: {{colors.on_primary_container.light.hex}};
+  --mg-outline: {{colors.outline_variant.light.hex}};
+  --mg-tint: rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.12);
+  --mg-tint-strong: rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.2);
+  --mg-glow: rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.35);
+  --mg-0: color-mix(in srgb, var(--mg-primary) 10%, white);
+  --mg-1: color-mix(in srgb, var(--mg-primary) 25%, white);
+  --mg-2: color-mix(in srgb, var(--mg-primary) 45%, white);
+  --mg-3: color-mix(in srgb, var(--mg-primary) 65%, white);
+  --mg-4: color-mix(in srgb, var(--mg-primary) 85%, white);
+  --mg-5: color-mix(in srgb, var(--mg-primary) 95%, white);
+  --mg-6: var(--mg-primary);
+  --mg-7: color-mix(in srgb, var(--mg-primary) 85%, black);
+  --mg-8: color-mix(in srgb, var(--mg-primary) 70%, black);
+  --mg-9: color-mix(in srgb, var(--mg-primary) 55%, black);
+
+  /* força a paleta mesmo com "usar cor de destaque do tema" desligado */
+  --theme-colors-primary: var(--mg-primary) !important;
+  --theme-colors-primary-contrast: var(--mg-on-primary) !important;
+  --theme-colors-border: rgba({{colors.outline_variant.light.red}}, {{colors.outline_variant.light.green}}, {{colors.outline_variant.light.blue}}, 0.35) !important;
+  --mantine-color-primary-0: var(--mg-0) !important;
+  --mantine-color-primary-1: var(--mg-1) !important;
+  --mantine-color-primary-2: var(--mg-2) !important;
+  --mantine-color-primary-3: var(--mg-3) !important;
+  --mantine-color-primary-4: var(--mg-4) !important;
+  --mantine-color-primary-5: var(--mg-5) !important;
+  --mantine-color-primary-6: var(--mg-6) !important;
+  --mantine-color-primary-7: var(--mg-7) !important;
+  --mantine-color-primary-8: var(--mg-8) !important;
+  --mantine-color-primary-9: var(--mg-9) !important;
+  --mantine-color-primary-filled: var(--mg-primary) !important;
+  --mantine-color-primary-filled-hover: var(--mg-7) !important;
+  --mantine-color-primary-light: var(--mg-tint) !important;
+  --mantine-color-primary-light-hover: var(--mg-tint-strong) !important;
+  --mantine-color-primary-light-color: var(--mg-primary) !important;
+  --mantine-color-primary-outline: var(--mg-primary) !important;
+  --mantine-color-primary-outline-hover: var(--mg-tint) !important;
+  --mantine-color-primary-text: var(--mg-primary) !important;
+  --mantine-primary-color-contrast: var(--mg-on-primary) !important;
+  --mantine-color-anchor: var(--mg-primary) !important;
+}
+
+::selection { color: var(--mg-on-primary); background: var(--mg-primary); }
+
+.fs-left-sidebar-module-container {
+  background-color: {{colors.surface_container_low.light.hex}} !important;
+  border-right: 1px solid var(--theme-colors-border);
+}
+.fs-sidebar-item-module-link { border-radius: 8px; transition: color .2s ease, background-color .2s ease; }
+.fs-sidebar-item-module-link:hover { background-color: rgba({{colors.on_surface.light.red}}, {{colors.on_surface.light.green}}, {{colors.on_surface.light.blue}}, 0.05); }
+.fs-sidebar-item-module-link.fs-sidebar-item-module-active,
+.fs-sidebar-collection-list-module-row-active {
+  color: var(--mg-primary);
+  background: linear-gradient(90deg, var(--mg-tint-strong), transparent 85%) border-box no-repeat;
+  box-shadow: inset 3px 0 0 var(--mg-primary);
+}
+
+.fs-player-bar-module-container {
+  background: linear-gradient(180deg, rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.05), transparent 60%),
+              {{colors.surface_container_low.light.hex}} !important;
+  border-top: 1px solid rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.18);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);
+}
+.fs-playerbar-slider-module-bar { background: linear-gradient(90deg, var(--mg-7), var(--mg-primary)); }
+.fs-playerbar-slider-module-root:hover .fs-playerbar-slider-module-bar { box-shadow: 0 0 8px var(--mg-glow); }
+.fs-playerbar-slider-module-thumb { background-color: var(--mg-primary); border-color: var(--mg-primary); }
+
+.fs-play-button-module-play-button {
+  background-color: var(--mg-primary) !important;
+  color: var(--mg-on-primary) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.fs-play-button-module-play-button svg { color: var(--mg-on-primary) !important; fill: var(--mg-on-primary); }
+.fs-play-button-module-play-button:hover { box-shadow: 0 0 0 3px var(--mg-tint-strong), 0 4px 16px var(--mg-glow); }
+
+.fs-item-card-module-image-container { transition: box-shadow .25s ease; }
+.fs-item-card-module-container:hover .fs-item-card-module-image-container {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba({{colors.primary.light.red}}, {{colors.primary.light.green}}, {{colors.primary.light.blue}}, 0.35);
+}
+.fs-item-card-module-selected .fs-item-card-module-image-container { box-shadow: 0 0 0 2px var(--mg-primary); }
+.fs-item-detail-list-module-track-row-selected { background-color: var(--mg-tint-strong) !important; }
+
+.fs-modal-module-content, .fs-popover-module-dropdown, .fs-select-module-dropdown,
+.fs-context-menu-module-content, .fs-dropdown-menu-module-menu-dropdown, .fs-hover-card-module-dropdown {
+  background-color: {{colors.surface_container_high.light.hex}} !important;
+  border: 1px solid rgba({{colors.outline_variant.light.red}}, {{colors.outline_variant.light.green}}, {{colors.outline_variant.light.blue}}, 0.5) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+.mantine-Modal-overlay { backdrop-filter: blur(3px); }
+.fs-tabs-module-tab[data-active] { color: var(--mg-primary); }
+.mantine-Input-input:focus, .mantine-Input-input:focus-within {
+  border-color: var(--mg-primary) !important;
+  box-shadow: 0 0 0 2px var(--mg-tint-strong);
+}
