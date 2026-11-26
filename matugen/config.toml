@@ -64,3 +64,11 @@ output_path = '~/.config/vesktop/themes/matugen.theme.css'
 [templates.obsidian]
 input_path = '~/.config/matugen/templates/obsidian/matugen.css'
 output_path = '~/Documents/Obsidian/.obsidian/snippets/matugen.css'
+
+[templates.vscodium_dark]
+input_path = '~/.config/matugen/templates/vscodium/matugen-dark-color-theme.json'
+output_path = '~/.vscode-oss/extensions/local.matugen-theme-1.0.0/themes/matugen-dark-color-theme.json'
+
+[templates.vscodium_light]
+input_path = '~/.config/matugen/templates/vscodium/matugen-light-color-theme.json'
+output_path = '~/.vscode-oss/extensions/local.matugen-theme-1.0.0/themes/matugen-light-color-theme.json'

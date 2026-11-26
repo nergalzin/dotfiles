@@ -6,7 +6,7 @@ set -euo pipefail
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CONF="${XDG_CONFIG_HOME:-$HOME/.config}"
 STAMP="$(date +%Y%m%d-%H%M%S)"
-APPS=(hypr fastfetch MangoHud matugen spicetify)
+APPS=(hypr fastfetch MangoHud matugen spicetify VSCodium)
 
 for app in "${APPS[@]}"; do
   while IFS= read -r -d '' src; do
@@ -38,6 +38,34 @@ if command -v systemctl >/dev/null && command -v spicetify >/dev/null; then
   systemctl --user daemon-reload
   systemctl --user enable --now spicetify-matugen.path >/dev/null 2>&1 && echo "enabled: spicetify-matugen.path"
   spicetify config current_theme Matugen color_scheme Matugen >/dev/null && echo "spicetify: theme set to Matugen (run 'spicetify apply' once)"
+fi
+
+# VSCodium: the Matugen color theme is a tiny local extension. Matugen writes its two theme files;
+# here we copy package.json (not a link, VSCodium rewrites extensions.json) and register it.
+EXT_ID="local.matugen-theme"; EXT_DIR="$HOME/.vscode-oss/extensions/$EXT_ID-1.0.0"
+if command -v codium >/dev/null || command -v vscodium >/dev/null; then
+  if pgrep -x codium >/dev/null; then
+    echo "VSCodium is running: close it and run this script again to register the Matugen theme." >&2
+  else
+    mkdir -p "$EXT_DIR/themes"
+    install -m644 "$REPO/vscodium-extension/package.json" "$EXT_DIR/package.json"
+    python3 - "$HOME/.vscode-oss/extensions/extensions.json" "$EXT_DIR" "$EXT_ID" <<'PY'
+import json, os, sys, time
+path, loc, ext_id = sys.argv[1:4]
+data = json.load(open(path)) if os.path.exists(path) else []
+data = [e for e in data if e["identifier"]["id"] != ext_id]
+data.append({"identifier": {"id": ext_id}, "version": "1.0.0",
+  "location": {"$mid": 1, "fsPath": loc, "external": "file://" + loc, "path": loc, "scheme": "file"},
+  "relativeLocation": os.path.basename(loc),
+  "metadata": {"isApplicationScoped": False, "isMachineScoped": False, "isBuiltin": False,
+               "installedTimestamp": int(time.time() * 1000), "pinned": False, "source": "resource",
+               "updated": False, "private": False, "isPreReleaseVersion": False,
+               "hasPreReleaseVersion": False, "preRelease": False}})
+os.makedirs(os.path.dirname(path), exist_ok=True)
+json.dump(data, open(path, "w"))
+PY
+    echo "vscodium: Matugen theme registered (change the wallpaper once so Matugen writes the theme files)"
+  fi
 fi
 
 if [ "${1:-}" = "--sddm" ]; then

@@ -5,7 +5,7 @@ set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CONF="${XDG_CONFIG_HOME:-$HOME/.config}"
-APPS=(hypr fastfetch MangoHud matugen spicetify)
+APPS=(hypr fastfetch MangoHud matugen spicetify VSCodium)
 
 UNIT_DIR="$CONF/systemd/user"
 UNITS=(spicetify-matugen.path spicetify-matugen.service)
@@ -34,6 +34,24 @@ for app in "${APPS[@]}"; do
     fi
   done < <(find "$REPO/$app" -type f -print0)
 done
+
+# VSCodium: remove the local Matugen theme extension and its extensions.json entry.
+EXT_ID="local.matugen-theme"; EXT_DIR="$HOME/.vscode-oss/extensions/$EXT_ID-1.0.0"
+if [ -d "$EXT_DIR" ]; then
+  if pgrep -x codium >/dev/null; then
+    echo "VSCodium is running: close it and run this script again to remove the Matugen theme." >&2
+  else
+    rm -rf "$EXT_DIR"
+    python3 - "$HOME/.vscode-oss/extensions/extensions.json" "$EXT_ID" <<'PY'
+import json, os, sys
+path, ext_id = sys.argv[1:3]
+if os.path.exists(path):
+    data = [e for e in json.load(open(path)) if e["identifier"]["id"] != ext_id]
+    json.dump(data, open(path, "w"))
+PY
+    echo "removed: $EXT_DIR"
+  fi
+fi
 
 if [ "${1:-}" = "--sddm" ]; then
   sudo -S -p '' rm -f /usr/share/sddm/themes/corners/theme.conf \

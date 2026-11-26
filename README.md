@@ -1,6 +1,6 @@
 # dotfiles
 
-My Arch / CachyOS desktop setup. One wallpaper decides the colors of the whole system: Hyprland, Spotify, Discord, Feishin, Obsidian and Hermes all repaint when it changes.
+My Arch / CachyOS desktop setup. One wallpaper decides the colors of the whole system: Hyprland, Spotify, Discord, Feishin, Obsidian, VSCodium and Hermes all repaint when it changes.
 
 Maintained by [@nergalzin](https://github.com/nergalzin).
 
@@ -40,7 +40,7 @@ Optional, install only what you use:
 
 ## What the installer does
 
-`scripts/install.sh` walks through `hypr`, `fastfetch`, `MangoHud`, `matugen` and `spicetify` and, for every file inside:
+`scripts/install.sh` walks through `hypr`, `fastfetch`, `MangoHud`, `matugen`, `spicetify` and `VSCodium` and, for every file inside:
 
 1. Moves anything already at the destination to `<file>.bak-<date>`.
 2. Creates a **relative symlink** in `~/.config` that points back to this repo (no username is written into the link).
@@ -50,6 +50,7 @@ Then it:
 
 - **Copies** (not links) the two `systemd/user/spicetify-matugen.*` units, because systemd refuses to enable symlinked units, and enables the path unit.
 - Selects the `Matugen` theme in Spicetify.
+- Registers the Matugen color theme as a small local VSCodium extension (`vscodium-extension/package.json` is **copied** to `~/.vscode-oss/extensions/local.matugen-theme-1.0.0/` and added to `extensions.json`). Close VSCodium first; the script asks you to re-run it if it is open.
 - Runs `hyprctl reload`.
 
 With `--sddm` it also uses `sudo` to copy the SDDM theme settings and wallpaper into `/usr/share/sddm/themes/corners/` and to write `/etc/sddm.conf.d/theme.conf`. Skip that flag if you don't use SDDM.
@@ -70,6 +71,7 @@ wallpaper changes
       ├─► matugen/templates/spicetify/        → Spotify color scheme ─► systemd path unit ─► spicetify refresh
       ├─► matugen/templates/vesktop/          → Discord (Vesktop) theme
       ├─► matugen/templates/obsidian/         → Obsidian CSS snippet
+      ├─► matugen/templates/vscodium/         → VSCodium: Matugen Dark / Light color themes
       └─► matugen/templates/hermes/           → Hermes skin
 ```
 
@@ -81,6 +83,7 @@ wallpaper changes
 | `spicetify/color.ini` | `~/.config/spicetify/Themes/Matugen/color.ini` |
 | `vesktop/matugen.theme.css` | `~/.config/vesktop/themes/matugen.theme.css` |
 | `obsidian/matugen.css` | `~/Documents/Obsidian/.obsidian/snippets/matugen.css` |
+| `vscodium/matugen-{dark,light}-color-theme.json` | `~/.vscode-oss/extensions/local.matugen-theme-1.0.0/themes/` |
 | `hermes/matugen.yaml` | `~/.hermes/skins/matugen.yaml` |
 
 The generated files are **not** tracked in this repo; Matugen recreates them on every change. The same goes for the rest of each app's folder: `~/.config/feishin` holds server logins and `config-xpui.ini` holds machine paths, so only templates and theme files live here.
@@ -94,6 +97,7 @@ Each app needs a one-time switch:
 | Feishin | Settings → Appearance → pick **Matugen Dark** and **Matugen Light**, turn on **Use theme accent color** |
 | Discord (Vesktop) | Settings → Themes → turn on **Matugen** |
 | Obsidian | Settings → Appearance → CSS snippets → turn on **matugen** (made for the [Primary](https://github.com/ceciliamay/primary) theme) |
+| VSCodium | Already selected by `VSCodium/User/settings.json`: **Matugen Dark** or **Matugen Light**, following the system dark/light mode. After a wallpaper change, reload the window (`Ctrl+Shift+P` → *Developer: Reload Window*) if the colors do not update by themselves. |
 | Hermes | `hermes config set display.skin matugen` |
 | Spotify | Close it and run `spicetify apply` once. After a Spotify update: `spicetify restore backup apply` |
 
@@ -115,6 +119,8 @@ dotfiles/
 ├── MangoHud/                   HUD theme + brand-logo font (fonts/build_font.py rebuilds it)
 ├── spicetify/Themes/Matugen/   Spotify theme CSS
 ├── systemd/user/               spicetify-matugen.path / .service
+├── VSCodium/User/settings.json selects the Matugen themes in VSCodium
+├── vscodium-extension/         package.json of the local Matugen theme extension
 ├── sddm/themes/corners/        login screen settings and wallpaper
 └── scripts/                    install.sh and uninstall.sh
 ```
