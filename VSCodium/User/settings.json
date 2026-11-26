@@ -2,5 +2,29 @@
   "workbench.colorTheme": "Matugen Dark",
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Matugen Dark",
-  "workbench.preferredLightColorTheme": "Matugen Light"
+  "workbench.preferredLightColorTheme": "Matugen Light",
+  "workbench.iconTheme": "material-icon-theme",
+
+  "window.titleBarStyle": "native",
+  "window.menuBarVisibility": "hidden",
+  "window.customTitleBarVisibility": "never",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "breadcrumbs.enabled": false,
+  "explorer.openEditors.visible": 0,
+
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 6,
+  "editor.scrollbar.horizontalScrollbarSize": 6,
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.padding.top": 12,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.smoothScrolling": true,
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'"
 }
